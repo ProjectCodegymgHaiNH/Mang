@@ -9,6 +9,7 @@
     let mangX = [4,2,12,3,8,6]
     let dau=0, cuoi = mangX.length-1;
     let trunggian
+    document.write("Mảng [" + mangX+ "] <br>")
     for (let i=dau; i<=cuoi; i++){
         trunggian = mangX[dau]
         mangX[dau] = mangX[cuoi]
@@ -16,7 +17,7 @@
         dau++
         cuoi--
     }
-    document.write(mangX)
+    document.write("Đảo ngược [" + mangX+ "]")
 </script>
 </body>
 </html>

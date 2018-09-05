@@ -2,9 +2,181 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Luyện tập mảng 01</title>
 </head>
 <body>
+<input type="button" value="Bài 1" onclick="bai1()">
+<input type="button" value="Bài 2" onclick="bai2()">
+<input type="button" value="Bài 3" onclick="bai3()">
+<input type="button" value="Bài 4" onclick="bai4()">
+<input type="button" value="Bài 5" onclick="bai5()">
+<input type="button" value="Bài 6" onclick="bai6()">
+<input type="button" value="Bài 7" onclick="bai7()">
+<input type="button" value="Bài 8" onclick="bai8()">
+<input type="button" value="Bài 9" onclick="bai9()">
 
+<script>
+function bai1() {
+    let mangso = []
+    let mangsolon10 = []
+    for(let i=0 ;i<10; i++){
+        mangso[i] = Number(prompt("Nhập số vào mảng"))
+    }
+    document.write("mangso = ["+mangso+"]<br>")
+    
+    for (let i=0; i<mangso.length; i++){
+
+        if(mangso[i]>10){
+            mangsolon10.push(mangso[i])
+        }
+    }
+    document.write("Các phần tử >= 10 trong mangso["+mangsolon10+"]<br>")
+
+}
+
+
+function bai2() {
+    let mangso = []
+    let max = 0, vitri = 0
+
+    for(let i=0 ;i<10; i++){
+        mangso[i] = Number(prompt("Nhập số vào mảng"))
+    }
+    document.write("mangso = ["+mangso+"]<br>")
+
+    for (let i=0; i<mangso.length; i++){
+        if(max< mangso[i]){
+            max = mangso[i]
+            vitri = i
+        }
+    }
+    document.write("Phần tử lớn nhất trong mảng là "+ max + " tại vị trí mangso["+vitri+"]")
+}
+
+function bai3() {
+    let mangso = []
+    let max = 0, vitri = 0, tongTb = 0
+
+    for(let i=0 ;i<10; i++){
+        mangso[i] = Number(prompt("Nhập số vào mảng"))
+    }
+    document.write("mangso = ["+mangso+"]<br>")
+
+    for (let i=0; i<mangso.length; i++){
+        if(max< mangso[i]){
+            max = mangso[i]
+            vitri = i
+        }
+        tongTb += mangso[i]
+    }
+    tongTb = tongTb/mangso.length
+    
+    document.write("Phần tử lớn nhất trong mảng là "+ max + " tại vị trí mangso["+vitri+"]<br>")
+    document.write("Tổng trung bình của các số là "+tongTb)
+}
+
+function bai4() {
+    let mangso = []
+
+    for(let i=0 ;i<10; i++){
+        mangso[i] = Number(prompt("Nhập số vào mảng"))
+    }
+    document.write("mangso = ["+mangso+"]<br>")
+
+    document.write("mangso = ["+mangso.reverse()+"]<br>")
+}
+
+function bai5() {
+    let mangso = [], mangsoam = []
+
+    for (let i = 0; i < 10; i++) {
+        mangso[i] = Number(prompt("Nhập số vào mảng"))
+        if (mangso[i]<0){
+            mangsoam.push(mangso[i])
+        }
+    }
+    document.write("mangso = ["+mangso+"]<br>")
+    document.write("Mảng các số âm gồm "+mangsoam.length +" phần tử mangsoam = ["+mangsoam+"]<br>")
+}
+
+function bai6() {
+    let mang = [], boo = true
+
+    for (let i = 0; i < 10; i++) {
+        mang[i] = prompt("Nhập số vào mảng")
+        if(mang[i] == "V"){
+            boo =false
+        }
+    }
+    document.write("Mang = ["+mang+"]<br>")
+    if(boo == false){
+        document.write("V is in the array")
+    }else{
+        document.write("V is not in the array")
+    }
+}
+
+
+function bai7() {
+    let mang = [], boo = true, vitri =[],dem = 0
+    let mangnew = []
+
+    for (let i = 0; i < 10; i++) {
+        mang[i] = prompt("Nhập số vào mảng")
+        if(mang[i] == "V"){
+            boo =false
+        }
+
+        if (mang[i] != "V"){
+            mangnew.push(mang[i])
+        }
+    }
+    document.write("Mang = ["+mang+"]<br>")
+    if(boo == false){
+        document.write("Đã xóa phần tử V. Mang = ["+mangnew+"]<br>")
+    }
+
+}
+
+
+function bai8() {
+    let mang = [], min = 0 ;
+
+    for (let i = 0; i < 10; i++) {
+        mang[i] = Number(prompt("Nhập số vào mảng"))
+    }
+    document.write("Mang = ["+mang+"]<br>")
+
+    for (let i=0; i<mang.length-1; i++){
+        for (let j=i+1; j<mang.length; j++) {
+            if (mang[i] < mang[j]) {
+                min = mang[i]
+                mang[i] = mang[j]
+                mang[j] = min
+            }
+        }
+    }
+    document.write("Xắp xếp từ lớn tới bé Mang = ["+mang+"]<br>")
+}
+
+function bai9() {
+    let mang1 = [], mang2 = [], mang3 = []
+    for (let i = 0; i < 10; i++) {
+        let a = Number(prompt("Nhập số vào mảng 1"))
+        mang1.push(a)
+    }
+    for (let j = 0; j < 10; j++) {
+        let b= Number(prompt("Nhập số vào mảng 2"))
+        mang2.push(b)
+    }
+    document.write("Mảng 1 = ["+mang1+"] <br>")
+    document.write("Mảng 2 = ["+mang2+"] <br>")
+    mang3 = mang1
+    for (let i=0; i<mang2.length ; i++){
+        mang3.push(mang2[i])
+    }
+    document.write("Mảng 3 = ["+mang3+"] <br>")
+}
+</script>
 </body>
 </html>
