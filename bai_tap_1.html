@@ -16,8 +16,8 @@
     }
 
     function bai2(){
-        var dayso= prompt("Nhập vào dẫy số");
-        var mang = [dayso[0]];
+        let dayso= prompt("Nhập vào dẫy số");
+        let mang = [dayso[0]];
         document.write("Dãy số gồm "+dayso +"<br>")
         for(let i=1; i<=dayso.length;i++){
             if(dayso[i-1] %2 == 0 && dayso[i] %2 == 0){
@@ -28,6 +28,23 @@
         }
 
         document.write(mang.join(""))
+    }
+    
+    function bai3() {
+        let chuoi = prompt("Nhập vào một chuỗi")
+        let CHUHOA = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        let CHUTHUONG = "abcdefghijklmnopqrstuvwxyz"
+        let ketqua = []
+        for (let i=0; i<chuoi.length; i++){
+            if(CHUHOA.indexOf(chuoi[i]) !== -1){
+                ketqua.push(chuoi[i].toLowerCase())
+            }else if(CHUTHUONG.indexOf(chuoi[i] !== -1)){
+                ketqua.push(chuoi[i].toUpperCase())
+            }else{
+                ketqua.push(chuoi[i])
+            }
+        }
+        alert(ketqua.join(""))
     }
 
 </script>

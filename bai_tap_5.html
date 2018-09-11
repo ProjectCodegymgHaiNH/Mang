@@ -6,12 +6,12 @@
 </head>
 <body>
 
-<input type="button" value="Bài 1" onclick="bai1()">
-<input type="button" value="Bài 2" onclick="bai2()">
-<input type="button" value="Bài 3" onclick="bai3()">
-<input type="button" value="Bài 4" onclick="bai4()">
-<input type="button" value="Bài 5" onclick="bai5()">
-<input type="button" value="Bài 6" onclick="bai6()">
+<input type="button" value="Bài 1" onclick="bai1()"> Viết chương trình khởi tạo mảng 2 chiều
+<br><input type="button" value="Bài 2" onclick="bai2()">in các ký tự trong một mảng theo thứ tự đảo ngược
+<br><input type="button" value="Bài 3" onclick="bai3()">chương trình khai báo một mảng ký tự và kích thước của mảng
+<br><input type="button" value="Bài 4" onclick="bai4()">Viết một chương trình để đếm số từ trong một chuỗi
+<br><input type="button" value="Bài 5" onclick="bai5()">kiểm tra xem hai chuỗi có giống nhau hay không.
+<br><input type="button" value="Bài 6" onclick="bai6()">tìm tất cả các ký tự trong mảng là (-) và thay thế các ký tự này bởi ký tự ( _ )
 
 <script>
     function bai1() {
@@ -34,7 +34,7 @@
 
 
     function bai2() {
-        let mang = [1,5,"a","c","d",6,7,"z","w",10]
+        let mang = [1,5,"a","c","d",6,7,"z","w",10,"213"]
         let trunggian
         document.write("Mảng = ["+mang+"]<br>")
         for (let i=0; i<Math.floor((mang.length)/2);i++){
@@ -100,19 +100,21 @@
     
     function bai6() {
         let mang = new Array(prompt("Nhập vào một chuỗi"))
+        let mangFix = []
 
         document.write("Mảng gồm ["+mang+"]<br>")
         for (let i=0; i<mang.length ; i++){
-
             for (let j=0; j<mang[i].length; j++){
                 if(mang[i][j] == "-"){
                     mang[i][j] = "_"
-                    document.write(mang[i][j])
+                    mangFix.push("_")
+                }else{
+                    mangFix.push(mang[i][j])
                 }
-            }
 
+            }
         }
-        document.write("Mảng sửa gồm ["+mang+"]<br>")
+        document.write("Mảng sửa gồm ["+mangFix.join("")+"]<br>")
     }
 </script>
 </body>
